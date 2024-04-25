@@ -37,3 +37,27 @@
     color: #fff;
     text-decoration: none;
   }
+
+
+  .hero {
+    background-image: url("assets/japan.jpeg");
+    background-size:cover;
+    color: black;
+    text-align: center;
+    padding: 100px 0;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+
+  .hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
