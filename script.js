@@ -1,4 +1,6 @@
-
+const jobListingContainer=document.getElementById('job-listing-container')
+let x=jobListingContainer.scrollHeight;
+let y=jobListingContainer.scrollWidth;
 const jobs =[
     {id :1, title:'Software Developer', company:'Decka',location:'Tokoyo',salary:'$10,000/year'},
     {id :2, title:'Front-end Developer', company:'Google',location:'Chennai',salary:'$8,000/month'},
@@ -22,8 +24,6 @@ const jobs =[
 ]
 
 function generateJobListings(){
-    const jobListingContainer=document.getElementById('job-listing-container')
-
     jobListingContainer.innerHTML='';
     jobs.forEach(jobs=>{
         const jobListings=document.createElement('div');
