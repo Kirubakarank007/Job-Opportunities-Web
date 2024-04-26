@@ -13,7 +13,11 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#job-listing">Job Listings</a></li>
             <li><a href="#about-japan">About Japan</a></li>
-          </ul>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="ja">日本語 (Japanese)</option>
+              </select>
+          </ul> 
         </nav>
       </header>
 
@@ -27,7 +31,11 @@
         </section>
 
         <section id="job-listing" class="job-listing">
+           <div class="search-bar">
             <h2>Features Job Listings</h2>
+                <input type="text" id="search-input" placeholder="Search..." style="padding: 10px 10px;">            
+           </div>
+            <ul id="search-suggestions" class="search-suggestions"></ul> 
             <div id="job-listing-container" class="job-listing-container">
             </div>
         </section>
@@ -57,9 +65,9 @@
                 <li>Currency: Japanese Yen (JPY)</li>
                 <li>National Flower: Cherry Blossom (Sakura)</li>
             </ul>
-            
         </section>
     </main>
+    <footer>&copy;2024 work Opportunities in Japan</footer>
 
 
     <script src="script.js"></script>
