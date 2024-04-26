@@ -40,11 +40,15 @@
 
 
   .hero {
+    height: 400px;
     background-image: url("assets/japan.jpeg");
-    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     color: black;
     text-align: center;
-    padding: 100px 0;
+    padding: 8% 0;
   }
 
   .hero-content {
@@ -137,11 +141,12 @@
   }
 
   .about-japan {
-    margin: 20px auto;
+    margin: 20px 0 0 0;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: repeating-radial-gradient(rgb(13, 176, 13), rgb(227, 227, 42));
   }
 
   .about-japan h1 {

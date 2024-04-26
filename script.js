@@ -8,20 +8,20 @@ const jobs = [
     { id: 1, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
     { id: 2, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
     { id: 3, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' },
+    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
     { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hydearbad', salary: '$30,000/year' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' },
+    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
     { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hydearbad', salary: '$30,000/year' },
     { id: 1, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
     { id: 2, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
     { id: 3, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' },
+    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
     { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hydearbad', salary: '$30,000/year' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' },
+    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
     { id: 1, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
     { id: 2, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
     { id: 3, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' },
+    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
     { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hydearbad', salary: '$30,000/year' },
     { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' }
 ];
@@ -31,6 +31,15 @@ function generateJobListing() {
     jobs.forEach(job => {
         const jobListings = document.createElement('div');
         jobListings.classList.add('job-listings-inner');
+        jobListings.dataset.enTitle = job.title; // English title
+        jobListings.dataset.jaTitle = translateToJapanese(job.title); // Japanese title
+        jobListings.dataset.enCompany = job.company; // English company
+        jobListings.dataset.jaCompany = translateToJapanese(job.company); // Japanese company
+        jobListings.dataset.enSalary = job.salary; // English salary
+        jobListings.dataset.jaSalary = translateToJapanese(job.salary); // Japanese salary
+        jobListings.dataset.enLocation = job.location; // English location
+        jobListings.dataset.jaLocation = translateToJapanese(job.location); // Japanese location
+
         jobListings.innerHTML = `
         <h3>${job.title}</h3>
         <p><strong>Company : </strong> ${job.company}</p>
@@ -40,7 +49,30 @@ function generateJobListing() {
         jobListingContainer.appendChild(jobListings);
     });
 }
+
+function translateToJapanese(text) {
+    // Example translation mapping
+    const translationMap = {
+      'Software Developer': 'ソフトウェア開発者',
+      'Front-end Developer': 'フロントエンド開発者',
+      'Back-end Developer': 'バックエンド開発者',
+      'Java Developer': 'Java 開発者',
+      'Web Developer': 'Web 開発者',
+      'Company': '会社',
+      'Salary': '給与',
+      'Location': '場所',
+      'Apply Now': '今すぐ応募',
+      '日本語 (Japanese)': 'English'
+      // Add more translations as needed
+    };
+  
+    // Return the translated text if available, otherwise return the original text
+    return translationMap[text] || text;
+  }
+  
 window.addEventListener('load', generateJobListing);
+
+
 
 function generateJobListings(filteredJobs=null) {
     jobListingContainer.innerHTML = '';
@@ -113,3 +145,19 @@ function filterJobListings(query) {
     });
     generateJobListings(filteredJobs);
 }
+
+function toggleLanguage() {
+    const language = document.getElementById('language-select').value;
+    const elements = document.querySelectorAll('[data-en], [data-ja]');
+  
+    elements.forEach(element => {
+      if (language === 'en') {
+        element.textContent = element.dataset.en;
+      } else if (language === 'ja') {
+        element.textContent = element.dataset.ja;
+      }
+    });
+  }
+  document.getElementById('language-select').addEventListener('change', toggleLanguage);
+  toggleLanguage();
+  
