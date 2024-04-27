@@ -11,16 +11,17 @@
   /* Header styles */
   header {
     background-color:black;
-    
     color: #fff;
     padding: 15px 0;
     display: flex;
     justify-content: flex-end;
-
   }
 
   nav {
-    width: 30%;
+    width: 45%;
+    @media(width<768px){
+      width: 100%;
+    }
   }
   
   nav ul {
@@ -38,6 +39,11 @@
     text-decoration: none;
   }
 
+  .language-select {
+    background-color:black;
+    color: white;
+    border: 1px solid white;
+  }
 
   .hero {
     height: 400px;
@@ -49,6 +55,9 @@
     color: black;
     text-align: center;
     padding: 8% 0;
+    @media(width<768px){
+      height:300px;
+    }
   }
 
   .hero-content {
@@ -58,6 +67,9 @@
   .hero-content h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    @media(width<768px){
+        font-size: 2em;
+    }
   }
 
 
@@ -80,11 +92,29 @@
   }
 
   .search-bar {
+    margin: 0 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    @media(width<768px){
+      justify-content: space-around;
+      margin: 0;
+    }
   }
+  .search-bar h1 {
+    font-size: 2em;
+    @media(width<768px){
+      font-size: 1em;
+    }
+  }
+  
+  .search-input {
 
+    padding: 10px 10px;
+    @media(width<768px){
+      padding: 5px 5px;
+    }
+  }
  
   .search-suggestions {
     display: flex;
@@ -99,13 +129,16 @@
 
   .job-listing-container {
     padding: 50px 0;
-    display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
+    display: flex;
+    margin: 0 2%;
+    display: flex;
     justify-content: center;
     gap: 20px;
     max-height: 600px; 
+    width: auto;
     overflow-y: auto; 
     padding-right: 10px; 
+    flex-wrap: wrap;
   }
 
   .job-listing-container::-webkit-scrollbar {
@@ -127,7 +160,7 @@
   }
 
   .job-listings-inner {
-    padding: 20px 0;
+    padding: 20px 20px;
     border: 2px solid black;
   }
 
