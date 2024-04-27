@@ -18,7 +18,7 @@
   }
 
   nav {
-    width: 45%;
+    width: 60%;
     @media(width<768px){
       width: 100%;
     }
@@ -27,11 +27,18 @@
   nav ul {
     list-style-type: none;
     text-align: center;
+    @media(width<768px){
+      display: flex;
+      justify-content: space-between;
+    }
   }
   
   nav ul li {
     display: inline;
     margin: 0 10px;
+    @media(width<768px){
+      margin: 0;
+    }
   }
   
   nav ul li a {
@@ -119,7 +126,6 @@
   .search-suggestions {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
   } 
 
   .job-listing {
@@ -190,13 +196,13 @@
 
   .about-japan h2 {
     margin-top: 10px;
-      color: #555;
+    color: #555;
   }
 
   .about-japan p {
     margin-top: 10px;
-      color: #666;
-      text-align: justify;
+    color: #666;
+    text-align: justify;
   }
 
   .image-container {
@@ -208,26 +214,26 @@
   }
 
   .image-container img {
-      max-width: 100%;
-      border-radius: 8px;
+    max-width: 100%;
+    border-radius: 8px;
   }
 
   .facts-list {
-      list-style-type: none;
-      padding: 0;
+    list-style-type: none;
+    padding: 0;
   }
 
   .facts-list li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
   }
 
   .facts-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #ff6347;
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff6347;
   }
 
   footer {

@@ -9,18 +9,18 @@ const jobs = [
     { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hyderabad', salary: '$30,000/year' },
     { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
     { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hyderabad', salary: '$30,000/year' },
-    { id: 1, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
-    { id: 2, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
-    { id: 3, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
-    { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hyderabad', salary: '$30,000/year' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
-    { id: 1, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
-    { id: 2, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
-    { id: 3, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
-    { id: 5, title: 'Web Developer', company: 'Amazon', location: 'Hyderabad', salary: '$30,000/year' },
-    { id: 4, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' }
+    { id: 6, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
+    { id: 7, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
+    { id: 8, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
+    { id: 9, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
+    { id: 10, title: 'Web Developer', company: 'Amazon', location: 'Hyderabad', salary: '$30,000/year' },
+    { id: 11, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
+    { id: 12, title: 'Software Developer', company: 'Decka', location: 'Tokoyo', salary: '$10,000/year' },
+    { id: 13, title: 'Front-end Developer', company: 'Google', location: 'Chennai', salary: '$8,000/month' },
+    { id: 14, title: 'Back-end Developer', company: 'Flipkart', location: 'Bengaluru', salary: '$1,000/month' },
+    { id: 15, title: 'Java Developer', company: 'Mooncraft', location: 'Coimbatore', salary: '$20,000/year' },
+    { id: 16, title: 'Web Developer', company: 'Amazon', location: 'Hyderabad', salary: '$30,000/year' },
+    { id: 17, title: 'Java Developer', company: 'Mooncraft', location: 'Combatore', salary: '$20,000/year' }
 ];
 
 function translateToJapanese(text) {
@@ -45,38 +45,32 @@ function translateToJapanese(text) {
       'Hyderabad':'ハイデラバード',
       'Coimbatore':'コインバトール',
     };
-  
     return translationMap[text] || text;
-  }
+}
+
   function generateJobListing() {
     jobListingContainer.innerHTML = '';
     jobs.forEach(job => {
-        const jobListings = document.createElement('div');
-        jobListings.classList.add('job-listings-inner');
-        jobListings.setAttribute('data-en-title', job.title);
-        jobListings.setAttribute('data-ap-title', translateToJapanese(job.title));
-        jobListings.setAttribute('data-en-company', job.company);
-        jobListings.setAttribute('data-ja-company', translateToJapanese(job.company));
-        jobListings.setAttribute('data-en-salary', job.salary);
-        jobListings.setAttribute('data-ja-salary', translateToJapanese(job.salary));
-        jobListings.setAttribute('data-en-location', job.location);
-        jobListings.setAttribute('data-ja-location', translateToJapanese(job.location));
-    
-        jobListings.innerHTML = `
-        <h3 data-en=${job.title} data-ja=${translateToJapanese(job.title)}>${job.title}</h3>
-        <p data-en=${job.company} data-ja=${translateToJapanese(job.company)}><strong>Company : </strong> ${job.company}</p>
-        <p data-en=${job.salary} data-ja=${translateToJapanese(job.salary)}><strong>Salary : </strong> ${job.salary}</p>
-        <p data-en=${job.location} data-ja=${translateToJapanese(job.location)}><strong>Location : </strong> ${job.location}</p>
-        <button class='apply-btn' data-en="Apply Now" data-ja="今すぐ応募"> <a href="https://forms.gle/YRUzr41vhBHrVY6T6" style='color:white'>Apply Now</a></button>`;
+         const jobListings = document.createElement('div');
+         jobListings.classList.add('job-listings-inner');
+         jobListings.setAttribute('data-en-title', job.title);
+         jobListings.setAttribute('data-ap-title', translateToJapanese(job.title));
+         jobListings.setAttribute('data-en-company', job.company);
+         jobListings.setAttribute('data-ja-company', translateToJapanese(job.company));
+         jobListings.setAttribute('data-en-salary', job.salary);
+         jobListings.setAttribute('data-ja-salary', translateToJapanese(job.salary));
+         jobListings.setAttribute('data-en-location', job.location);
+         jobListings.setAttribute('data-ja-location', translateToJapanese(job.location));
+                 jobListings.innerHTML = `
+                 <h3 data-en=${job.title} data-ja=${translateToJapanese(job.title)}>${job.title}</h3>
+                 <p data-en=${job.company} data-ja=${translateToJapanese(job.company)}><strong>Company : </strong> ${job.company}</p>
+                 <p data-en=${job.salary} data-ja=${translateToJapanese(job.salary)}><strong>Salary : </strong> ${job.salary}</p>
+                 <p data-en=${job.location} data-ja=${translateToJapanese(job.location)}><strong>Location : </strong> ${job.location}</p>
+                 <button class='apply-btn' data-en="Apply Now" data-ja="今すぐ応募"> <a href="https://forms.gle/YRUzr41vhBHrVY6T6" style='color:white'>Apply Now</a></button>`;
         jobListingContainer.appendChild(jobListings);
     });
 }
-
-
-  
 window.addEventListener('load', generateJobListing);
-
-
 
 function generateJobListings(filteredJobs=null) {
     jobListingContainer.innerHTML = '';
@@ -93,12 +87,12 @@ function generateJobListings(filteredJobs=null) {
             jobListings.setAttribute('data-jp-salary', translateToJapanese(job.salary));
             jobListings.setAttribute('data-en-location', job.location);
             jobListings.setAttribute('data-jp-location', translateToJapanese(job.location));
-            jobListings.innerHTML = `
-            <h3 data-en=${job.title} data-ja=${translateToJapanese(job.title)}>${job.title}</h3>
-            <p data-en=${job.company} data-ja=${translateToJapanese(job.company)}><strong>Company : </strong> ${job.company}</p>
-            <p data-en=${job.salary} data-ja=${translateToJapanese(job.salary)}><strong>Salary : </strong> ${job.salary}</p>
-            <p data-en=${job.location} data-ja=${translateToJapanese(job.location)}><strong>Location : </strong> ${job.location}</p>
-            <button class='apply-btn' data-en="Apply Now" data-ja="今すぐ応募"><a href="https://forms.gle/YRUzr41vhBHrVY6T6" style='color:white'>Apply Now</a></button>`;
+                jobListings.innerHTML = `
+                <h3 data-en=${job.title} data-ja=${translateToJapanese(job.title)}>${job.title}</h3>
+                <p data-en=${job.company} data-ja=${translateToJapanese(job.company)}><strong>Company : </strong> ${job.company}</p>
+                <p data-en=${job.salary} data-ja=${translateToJapanese(job.salary)}><strong>Salary : </strong> ${job.salary}</p>
+                <p data-en=${job.location} data-ja=${translateToJapanese(job.location)}><strong>Location : </strong> ${job.location}</p>
+                <button class='apply-btn' data-en="Apply Now" data-ja="今すぐ応募"><a href="https://forms.gle/YRUzr41vhBHrVY6T6" style='color:white'>Apply Now</a></button>`;
             jobListingContainer.appendChild(jobListings);
     });
 }
